@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Form To Email Using JavaScript</title>
+<link rel="stylesheet" href="style2.css">
+</head>
+<body>
+   <div class="container">
+   <form onsubmit="sendEmail(); reset(); return false;">
+    <h3>GET IN TOUCH</h3>
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="email" id="email" placeholder="Email id" required>
+    <input type="text" id="phone" placeholder="Phone no." required>
+    <textarea id="messege" rows="4"  placeholder="Type Your Suggestions"></textarea>
+    <button type="submit">Send</button>
+   </form>
+   </div>
+   <script src="https://smtpjs.com/v3/smtp.js"></script>
+   <script>
+        function sendEmail(){
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phone").value;
+    let messege = document.getElementById("messege").value;
+
+            Email.send({
+            Host : "smtp.elasticemail.com",
+            Username : "contactform184@gmail.com",
+            Password : "C51B00C049B8D0E5E4CCDB210B8B31AC69B5",
+            To : 'dipanshumundeja2509@gmail.com'
+
+            From : "contactform184@gmail.com",
+            Subject : "Contact Form",
+            Body : "name: "+ name + "<br/>" + email + "<br/>phone:    " + phone + "<br/s>messege:  " + messege
+}).then(
+  message => alert(message)
+);
+        }
+   </script>
+</body>
+</html>

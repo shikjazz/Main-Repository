@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GScape Discover</title>
+    <!---custom css link--->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style0.css">
+    <link rel="stylesheet" type="text/css" href="style2.css">
+    <!--boxicons  -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+
+</head>
+
+<body >
+
+    <!-- Navbar Section Start-->
+ 
+    <header>
+      
+        <a href="#" class="logo">G_<span>Scape Discover</span></a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+
+        <ul class="navbar">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+
+            <div class="bx bx-moon" id="darkmode"></div>
+        </ul>
+    </header>
+
+    <!-- Navbar Section End-->
+    <!-- Home Section Start-->
+    <section class="home" id="home">
+        <div class="home-text">
+            <h1>Find Your Outdoors</h1>
+            <a href="https://www.google.co.in/maps/search/environmental+places+near+me/@12.8331614,79.9702019,12z/data=!3m1!4b1?entry=ttu" class="exp-link">
+                <button class="explore">
+                    Explore
+                </button>
+                
+            </a>
+            <a href="weather.html">
+                <button class="weather">
+                    Check Weather
+                </button></a>
+            
+        </div>
+
+        <div id="earthback">
+            <div id="earth"></div>
+              </div>
+        
+    </section>
+    <!-- Home Section End-->
+
+
+    <!-- About Section Start-->
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="22.png" alt="">
+
+        </div>
+        <div class="about-content">
+            <h2>About Us</h2>
+            <p> Pick the right spot for yourself,website that 
+                helps people find environmentally-friendly travel destinations 
+                is a valuable service, especially in today's world where sustainability and 
+                eco-conscious travel are becoming increasingly important.   </p>
+        </div>
+
+    </section>
+    <!-- About Section End-->
+
+    <!-- Services Section Start-->
+    <section class="services" id="services">
+        <div class="heading">
+            <h2>Services</h2>
+            <h4>Better Expericences</h4>
+
+        </div>
+        <div class="services-content">
+            <div class="box">
+                <img src="img/serv1.png" alt="">
+                <h3>Personal Consultation</h3>
+                <p>
+                    Discover the globe's hidden gems and plan unforgettable journeys with our expert guidance. Whether you're seeking cultural immersion, adventure, or relaxation, our experienced consultants are here to curate personalized itineraries that match your unique preferences.
+                </p>
+            </div>
+            <div class="box">
+                <img src="img/serv2.png" alt="">
+                <h3>More tools for more adventures</h3>
+                <p> From sourcing the finest restaurants to arranging seamless transportation, securing personal guides, and offering a multitude of other amenities, we've got it all covered. Need a reservation at the city's hidden gem restaurant? No problem. Looking for a comfortable ride or a knowledgeable guide? Consider it done. Contact us today, and let us tailor your journey to perfection. </p>
+            </div>
+            <div class="box">
+                <img src="img/serv3.png" alt="">
+                <h3>Environment Welfare</h3>
+                <p>Every service on our website contributes to a greener, more sustainable future. At G_Scape, we're committed to giving back, and we're proud to share that 1% of our revenue goes towards supporting reforestation projects and NGOs dedicated to environmental conservation</p>
+            </div>
+        </div>
+
+    </section>
+    <!-- Services Section End -->
+
+
+    
+    <section class="portfolio" id="portfolio">
+        
+        <div class="heading">
+            <h2></h2>
+            <h2>Take our service and donate 1% to environment</h2>
+            
+        </div>
+        
+
+    
+
+
+    <!-- Contact Section Start -->
+    <section class="contact" id="contact">
+        <div class="heading">
+            <h2>Contact</h2>
+            <span>Connect now and let the journey begin!</span>
+        </div>
+        <div id="chartdiv">
+            <script src="https://www.amcharts.com/lib/4/core.js"></script>
+        <script src="https://www.amcharts.com/lib/4/maps.js"></script>
+        <script src="https://www.amcharts.com/lib/4/geodata/india2019High.js"></script>
+        <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+        </div> 
+        <script src="script.js"></script>
+        <div class="contact-form">
+            <div class="container">
+                <form onsubmit="sendEmail(); reset(); return false;">
+                 <h3>GET IN TOUCH</h3>
+                 <input type="text" id="name" placeholder="Your Name" black required>
+                 <input type="email" id="email" placeholder="Email id" required>
+                 <input type="text" id="phone" placeholder="Phone no." required>
+                 
+                 <input type="text" id="location" placeholder="location" required>
+                 <textarea id="messege" rows="4"  placeholder="service required"></textarea>
+                 
+                    <button type="submit" aria-setsize="50" class="sentt">Send</button>
+
+                 
+                </form>
+                </div>
+                <script src="https://smtpjs.com/v3/smtp.js"></script>
+                <script>
+                     function sendEmail(){
+                 let name = document.getElementById("name").value;
+                 let email = document.getElementById("email").value;
+                 let phone = document.getElementById("phone").value;
+                 let messege = document.getElementById("messege").value;
+                 let location = document.getElementById("location").value;
+             
+                         Email.send({
+                         Host : "smtp.elasticemail.com",
+                         Username : "contactform184@gmail.com",
+                         Password : "C51B00C049B8D0E5E4CCDB210B8B31AC69B5",
+                         To : 'uv6664@srmist.edu.in',
+                         From : "contactform184@gmail.com",
+                         Subject : "Contact Form",
+                         Body : "name: "+ name + "<br/>" + email + "<br/>phone:    " + phone + "<br/s>messege:  " + messege
+             }).then(
+               message => alert(message)
+             );
+                     }
+                </script>
+                                <!-- Contact Section End -->
+   
+
+    <!-- Contact Section End -->
+    <!-- Contact Section Start -->
+    <br>
+    </div>
+    <br>
+    
+    <!---custom js link--->
+    
+   
+ <br>
+ 
+ 
+
+
+    
+</body>
+
+</html>
