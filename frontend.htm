@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Assistant</title>
+    <style>
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+    <div id="chat-container">
+        <div id="chat-messages"></div>
+        <div id="voice-input">
+            <button id="microphone-btn">🎤</button>
+        </div>
+    </div>
+
+    <script>
+        const chatMessages = document.getElementById('chat-messages');
+        const microphoneBtn = document.getElementById('microphone-btn');
+        let recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
+        recognition.lang = 'en-US';
+
+        microphoneBtn.addEventListener('click', () => {
+            recognition.start();
+        });
+
+        recognition.onresult = function(event) {
+            const userMessage = event.results[0][0].transcript;
+            displayMessage('You: ' + userMessage);
+            sendToBackend(userMessage);
+        };
+
+        function displayMessage(message) {
+            const messageElement = document.createElement('div');
+            messageElement.textContent = message;
+            chatMessages.appendChild(messageElement);
+        }
+
+        function sendToBackend(message) {
+            // Send message to backend and handle response
+            // Example: You can make an AJAX request to your backend API
+        }
+    </script>
+</body>
+</html>
